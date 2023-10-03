@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://djdo853eakepl"]
+
+[ext_resource type="Script" path="res://components/ui/box_selector/BoxSelector.gd" id="1_kww7w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4raf4"]
+size = Vector2(1, 1)
+
+[node name="BoxSelector" type="Node2D"]
+script = ExtResource("1_kww7w")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+color = Color(1, 1, 0, 0.223529)
+polygon = PackedVector2Array(0, 0, 1, 0, 1, 1, 0, 1)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+input_pickable = false
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_4raf4")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

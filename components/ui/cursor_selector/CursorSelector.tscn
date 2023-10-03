@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw20yhfbqbyq5"]
+
+[ext_resource type="Script" path="res://components/ui/cursor_selector/CursorSelector.gd" id="1_jl6k2"]
+
+[node name="CursorSelector" type="Node2D"]
+script = ExtResource("1_jl6k2")
